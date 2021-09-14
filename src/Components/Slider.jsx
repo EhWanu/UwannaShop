@@ -38,6 +38,7 @@ import styled from 'styled-components'
     height: 100vh;
     display: flex;
     align-items: center;
+    background-color: #${props => props.bg};
  `
  const ImgContainer = styled.div`
     height: 100%;
@@ -88,7 +89,7 @@ import styled from 'styled-components'
                                 <Button>SHOP NOW</Button>
                             </InfoContainer>
                         </Slide>
-                        <Slide>
+                        <Slide bg="fcf1ed">
                             <ImgContainer>
                                 <Image src='https://i.ibb.co/XsdmR2c/1.png'/>
                             </ImgContainer>
@@ -98,7 +99,7 @@ import styled from 'styled-components'
                                 <Button>SHOP NOW</Button>
                             </InfoContainer>
                         </Slide>
-                        <Slide>
+                        <Slide bg="fbf0f4">
                             <ImgContainer>
                                 <Image src='https://i.ibb.co/XsdmR2c/1.png'/>
                             </ImgContainer>
