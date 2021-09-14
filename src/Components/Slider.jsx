@@ -10,7 +10,7 @@ import {sliderItems} from '../data'
      position: relative;
      overflow: hidden;
  `
-
+ 
  const Arrow = styled.div`
     width: 50px;
     height: 50px;
@@ -32,8 +32,8 @@ import {sliderItems} from '../data'
 
  const Wrapper = styled.div`
     height: 100%;
-    display: flex; 
-    translate: translateX(0vw);
+    display: flex;  
+    transform: translateX(${(props) => props.slideIndex * -100}vw);
  `
 
  const Slide = styled.div`
@@ -41,7 +41,7 @@ import {sliderItems} from '../data'
     height: 100vh;
     display: flex;
     align-items: center;
-    background-color: #${props => props.bg };
+    background-color: #${(props)=> props.bg };
  `
  const ImgContainer = styled.div`
     height: 100%;
@@ -77,17 +77,22 @@ import {sliderItems} from '../data'
  const Slider = () => {
     
     const [slideIndex, setSlideIndex] = useState(0) 
-    const handleClick = (direction) => {}
+    const handleClick = (direction) => {  
+        if(direction === 'left') {
+            setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2)
+        } else {
+            setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0)
+        }
+    } 
 
      return (
-         <div>
              <Container>
                 <Arrow direction="left" onClick={() => handleClick('left')}>
                     <ArrowLeftOutlined />
                 </Arrow>
-                    <Wrapper>
+                    <Wrapper slideIndex={slideIndex}>
                         {sliderItems.map((item) => ( 
-                        <Slide bg={item.bg }>
+                        <Slide bg={item.bg} key={item.id}>
                             <ImgContainer>
                                 <Image src={item.img}/>
                             </ImgContainer>
@@ -99,11 +104,10 @@ import {sliderItems} from '../data'
                         </Slide>
                         ))}
                     </Wrapper>
-                <Arrow direction="right" onClick={() => handleClick('right')}>
+                <Arrow direction="right" onClick={() => handleClick('right')} >
                     <ArrowRightOutlined />
                 </Arrow> 
              </Container>
-         </div>
      )
  }
  
