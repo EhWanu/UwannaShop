@@ -30,7 +30,7 @@ import {sliderItems} from '../data'
     z-index: 2;
  `
 
- const Wrapper = styled.div` 
+ const Wrapper = styled.div`
     height: 100%; 
     display: flex;  
     transition: all 1.5s ease;
