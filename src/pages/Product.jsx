@@ -11,19 +11,33 @@ import Newsletter from "../Components/Newsletter"
  `
  const ImageContainer = styled.div`
     flex: 1;
+    padding: 0px 50px;
  `
 
  const Image = styled.img`
     width: 100%;
+    height: 90vh;
+    object-fit: cover;
  `
- const Title = styled.div``
- const Description = styled.h1``
- const Price = styled.p``
-
  const InfoContainer = styled.span`
-    flex: 1;
-    
+ flex: 1;
+ 
+`
+
+ const Title = styled.h1`
+    font-weight: 200;
  `
+
+ const Description = styled.p`
+    margin: 20px 0px;
+ `
+
+ const Price = styled.span`
+    font-weight: 100;
+    font-size: 40px;
+ `
+
+ 
 
 const Product = () => {
     return (
@@ -38,6 +52,7 @@ const Product = () => {
                     <Title>Denim Jumpsuit</Title>
                     <Description>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error a laudantium minus. Repellat consectetur natus commodi quae aspernatur quam enim illo aperiam eaque mollitia. Quod sapiente exercitationem totam animi dolores!</Description>
                     <Price>$ 20</Price>
+                                        
                 </InfoContainer>
             </Wrapper>
             <Newsletter />
