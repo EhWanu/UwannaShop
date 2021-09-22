@@ -58,6 +58,16 @@ const Right =  styled.div`
     padding: 20px;
 
 `
+
+const ContactItem = styled.div`
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+`
+
+const Payment = styled.img`
+    width: 50%;
+`
     
 
 const Footer = () => {
@@ -103,15 +113,15 @@ const Footer = () => {
             <Right>
                 <Title>Contact</Title>
                 <ContactItem>
-                    <Room /> 123 Fake Street
+                    <Room style={{marginRight:"10px"}}/> 123 Fake Street
                 </ContactItem>
                 <ContactItem>
-                    <Phone /> +1 555 555 5555
+                    <Phone style={{marginRight:"10px"}} /> +1 555 555 5555
                 </ContactItem>
                 <ContactItem>
-                   <MailOutline /> contact@uwanna.null
+                   <MailOutline style={{marginRight:"10px"}} /> contact@uwanna.null
                 </ContactItem>
-                <Payment src='https://i.bb.co/Qfvn4z6/payment.png' />
+                <Payment src="https://i.ibb.co/Qfvn4z6/payment.png"  />
             </Right>
         </Container>
     )
