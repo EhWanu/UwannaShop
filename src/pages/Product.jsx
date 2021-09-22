@@ -1,3 +1,4 @@
+import { Add, Remove } from "@material-ui/icons"
 import styled from "styled-components"
 import Announcement from "../Components/Announcement"
 import Footer from "../Components/Footer"
@@ -50,7 +51,6 @@ const FilterSize = styled.select `
     margin-left: 10px;
     padding: 10px;
 `
-const FilterSizeOption = styled.option``
 
  const Title = styled.h1`
     font-weight: 200;
@@ -64,8 +64,44 @@ const FilterSizeOption = styled.option``
     font-weight: 100;
     font-size: 40px;
  `
+const FilterSizeOption = styled.option``
 
- 
+const AddContainer = styled.div`
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+`
+
+const AmountContainer = styled.div`
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+`
+
+const Amount = styled.span`
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid teal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 5px;
+`
+
+const Button = styled.button`
+    padding: 15px;
+    border: 1px solid teal;
+    background-color: white;
+    cursor: pointer;
+    font-weight: 500;
+
+    &:hover {
+        background-color: #f8f4f4
+    }
+`
+
 
 const Product = () => {
     return (
@@ -99,7 +135,12 @@ const Product = () => {
                         </Filter>
                     </FilterContainer>
                     <AddContainer>
-                        
+                        <AmountContainer>
+                            <Remove />
+                            <Amount>1</Amount>
+                            <Add />
+                        </AmountContainer>
+                        <Button>ADD TO CART</Button>
                     </AddContainer>                    
                 </InfoContainer>
             </Wrapper>
