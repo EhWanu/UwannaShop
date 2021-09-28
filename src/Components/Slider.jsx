@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import {sliderItems} from '../data'
+import { mobile } from '../responsive'
 
  const Container = styled.div`
     width: 100%;
@@ -9,6 +10,9 @@ import {sliderItems} from '../data'
     display: flex;
      position: relative;
      overflow: hidden;
+     ${mobile({
+        display: 'none '
+    })} 
  `
  
  const Arrow = styled.div`
